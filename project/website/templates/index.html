@@ -57,9 +57,7 @@
           <li><a href="{% static 'index.html#hero' %}" class="active">Home</a></li>
           <li><a href="{% static 'index.html#about' %}">About</a></li>
           <li><a href="{% static 'index.html#services' %}">Services</a></li>
-          <li><a href="{% static 'index.html#portfolio' %}">Portfolio</a></li>
-          <li><a href="{% static 'index.html#team' %}">Team</a></li>
-          <li><a href="{% static 'blog.html' %}">Blog</a></li>
+          <li><a href="{% url 'forum' %}">Community Forum</a></li>
           {% comment %} <li class="{% static 'dropdown has-dropdown' %}"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dd-box-shadow">
               <li><a href="#">Dropdown 1</a></li>
@@ -77,7 +75,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> {% endcomment %}
-          <li><a href="{% static 'index.html#contact' %}">Contact</a></li>
+          <li><a href="{% url 'chatbot' %}">ChatBot</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -101,7 +99,7 @@
             <p data-aos="fade-up" data-aos-delay="200">Let's combat modern day gender issues together!</p>
           </div>
           <div class="col-lg-5">
-            <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
+            <form action="/register" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
               <input type="text" class="form-control" placeholder="Enter email address">
               <input type="submit" class="btn btn-primary" value="Sign up">
             </form>
@@ -208,44 +206,20 @@
     </section><!-- End About Section -->
 
     <!-- Stats Section - Home Page -->
-    <section id="stats" class="stats">
+    <section id="call-to-action" class="call-to-action">
 
-      <img src="{% static '' %}" alt="" data-aos="fade-in">
+      <img src="" alt="">
 
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Clients</p>
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>EQUIFY FEATURE</h3>
+              <p>#BreakTheBias using our equify feature and find out if you're getting paid what you deserve.</p>
+              <a class="cta-btn" href="/input">EQUIFY</a>
             </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Workers</p>
-            </div>
-          </div><!-- End Stats Item -->
-
+          </div>
         </div>
-
       </div>
 
     </section><!-- End Stats Section -->
@@ -260,7 +234,6 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-
         <div class="row gy-4">
 
           <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
@@ -1166,7 +1139,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>&copy; <span>Copyright</span> <strong class="px-1">Append</strong> <span>All Rights Reserved</span></p>
+      <p>&copy; <span>Copyright</span> <strong class="px-1">Break the Bias</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
@@ -1178,7 +1151,7 @@
   </footer><!-- End Footer -->
 
   <!-- Scroll Top Button -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"></a>
 
   <!-- Preloader -->
   <div id="preloader">

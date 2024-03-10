@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FAEBD7; /* AntiqueWhite */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #FFFFFF; /* White */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation-name: fadeIn;
+            animation-duration: 0.5s;
+        }
+        h1 {
+            text-align: center;
+            color: #333333; /* DarkGray */
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555555; /* DimGray */
+            font-size: 16px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #CCCCCC; /* Silver */
+            border-radius: 5px;
+            background-color: #F5F5F5; /* LightGray */
+            transition: border-color 0.3s ease;
+            font-size: 16px;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        }
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #663399; /* RebeccaPurple */
+            outline: none;
+        }
+        button[type="submit"] {
+            background-color: #663399; /* RebeccaPurple */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"]:hover {
+            background-color: #4B0082; /* Indigo */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>User Input Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>User Input Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
+
+            <label for="education">Education Qualification:</label>
+            <select id="education" name="education" required>
+                <option value="High School">High School</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="PhD">PhD</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="experience">Years of Experience:</label>
+            <input type="text" id="experience" name="experience" required>
+
+            <label for="salary">Current Salary:</label>
+            <input type="text" id="salary" name="salary" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
